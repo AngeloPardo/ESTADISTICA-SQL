@@ -61,4 +61,4 @@ LEFT JOIN Workers WKS_ WITH (NOLOCK) ON SOH2.OrderTakerPersonnelNumber = WKS_.Pe
 LEFT JOIN EmployeesV2 EMP2 WITH (NOLOCK) ON COALESCE(UPPER(SOH3.OrderResponsiblePersonnelNumber),UPPER(SOH2.OrderResponsiblePersonnelNumber),'-') = EMP2.PersonnelNumber
 LEFT JOIN Workers WKS2_ WITH (NOLOCK) ON SOH2.OrderResponsiblePersonnelNumber = WKS2_.PersonnelNumber
  
-where CONVERT(VARCHAR(8), CAST(DATEADD(HOUR, -5, ISNULL(IDF.InvoiceDate, BIP.InvoiceDate)) AS DATE), 112) BETWEEN '20250601' AND '20250915'	
+WHERE CONVERT(VARCHAR(8), CAST(DATEADD(HOUR, -5, ISNULL(IDF.InvoiceDate, BIP.InvoiceDate)) AS DATE), 112) BETWEEN '20250601' AND '20250915'	
